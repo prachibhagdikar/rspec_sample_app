@@ -17,10 +17,12 @@
     <% if @products.present? %>
     <% @products.each do |product| %>
       <tr>
+        <% presenter = ProductPresenter.new(product) %>
         <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= product.description %></td>
-        <td><%= product.type %></td>
+        <td><%= presenter.product_type %></td>
+        <td><%= presenter.category %></td>
       </tr>
     <% end %>
     <% else %>

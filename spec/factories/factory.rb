@@ -1,15 +1,23 @@
 FactoryGirl.define do
   factory :user do
-
-    email "test@test.com"
+    sequence(:email) { |n| 'test#{n}@example.com' }
     password "12345678"
     is_admin false
-
-    trait :admin do
-	    after(:build) do |user|
-	      user.is_admin = true
-	      user.email = "admin@admin.com"
-	    end
-	  end
   end
+
+  factory :admin, class: User do
+  	sequence(:email) { |n| 'admin#{n}@example.com' }
+    password "12345678"
+    is_admin true
+  end
+
+  factory :product do
+  	name "N95 Mask"
+  	price "200"
+  	description "Most comfortable and resuable"
+  	product_type "essential"
+  	available true
+  	category "medicine"
+  end
+
 end
