@@ -24,7 +24,7 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include SpecTestHelper
   config.include Rails.application.routes.url_helpers
-
+  config.extend ControllerMacros, :type => :controller
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods

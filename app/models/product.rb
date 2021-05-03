@@ -12,4 +12,13 @@ class Product < ActiveRecord::Base
 	    vegetables: "vegetables",
 	    fruits: "fruits"
 	}
+
+	PRODUCT_CATEGORY = {"Personal Care": ["clothing","footwear"], 
+		"Grocery & Gourmet Foods": ["vegetables","food","fruits"], 
+		"Beauty Essentials": ["cosmetics"], 
+		"Healthcare": ["medicine"]
+	}
+	validates_presence_of :product_type
+	validates_presence_of :name
+	validates_presence_of :price
 end

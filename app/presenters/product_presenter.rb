@@ -11,17 +11,14 @@ class ProductPresenter
 
   def category
   	if @product.category.present?
-  		case @product.category
-  		when "clothing" || "footwear"
-  			return "Personal Care"
-  		when "vegetables" || "fruits" || "food"
-  			return "Grocery & Gourmet Foods"
-  		when "cosmetics"
-  			return "Beauty Essentials"
-  		when "medicine"
-  			return "Healthcare"
-  		end
+  		key_in_a_hash(@product.category,Product::PRODUCT_CATEGORY)
   	end
+  end
+
+  def key_in_a_hash(key,hashes)
+  	return hashes.find { |k, v|
+		  v.include?(key)
+		}.first.to_s
   end
 
 end
