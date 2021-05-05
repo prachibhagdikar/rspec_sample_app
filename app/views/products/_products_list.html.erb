@@ -1,0 +1,25 @@
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th colspan="3"></th>
+  </tr>
+</thead>
+
+<tbody>
+  <% if products.present? %>
+    <% products[:data].each do |product|%>
+      <tr>
+        <td><%= product[:attributes][:name] %></td>
+        <td><%= product[:attributes][:price] %></td>
+        <td><%= product[:attributes][:description] %></td>
+        <td><%= product[:attributes][:product_type] %></td>
+        <td><%= product[:attributes][:category] %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <tr><td>There are no products.</td></tr>
+  <% end %>
+</tbody>

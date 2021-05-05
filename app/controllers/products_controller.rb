@@ -9,7 +9,16 @@ class ProductsController < ApplicationController
   end
 
   def list
-    @products = Product.all
+    if !params[:search].nil?
+      @products = Product.where("name like ?","%#{params[:search]}%")
+      @products = ProductSerializer.new(@products).serializable_hash
+    else
+      @products = Product.all
+    end
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # GET /products/1
