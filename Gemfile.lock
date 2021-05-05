@@ -55,11 +55,8 @@ GEM
     diff-lcs (1.4.4)
     erubis (2.7.0)
     execjs (2.7.0)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
+    factory_bot (5.2.0)
+      activesupport (>= 4.2.0)
     fast_jsonapi (1.5)
       activesupport (>= 4.2)
     ffi (1.15.0)
@@ -185,7 +182,7 @@ DEPENDENCIES
   bcrypt
   byebug
   coffee-rails (~> 4.1.0)
-  factory_girl_rails
+  factory_bot
   fast_jsonapi
   jbuilder (~> 2.0)
   jquery-rails
